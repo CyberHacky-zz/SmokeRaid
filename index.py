@@ -18,7 +18,7 @@ logo = ('''
                                                       
                                                                    
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[!] This Tool Must Run As ROOT [!]         Created By : www.smokescreen.io\n\n''')
+[!] This Tool Must Run As ROOT [!]            Created By : CyberHacky\n\n''')
 
 
 # Print Logo on startup
@@ -31,6 +31,9 @@ def mainmenu():
    {2}--PeCMD
    {3}--LoKI
    {4}--Mimikatz
+   {5}--Run All Analysis
+   {6}--VirusTotal Analysis
+   {7}--Run WMI Script
    {0}--Exit
  """)
     choice = input("SmokeRaid~# ")
@@ -42,6 +45,12 @@ def mainmenu():
         loki()
     elif choice == "4":
         mimikatz()
+    elif choice == "5":
+        allanalysis()
+    elif choice == "6":
+        virustotal()
+    elif choice == "7":
+        wmiscript() 
     elif choice == "0":
         print("Thanks for Using Smokeraid")
         os.system('cls'), sys.exit()
@@ -162,21 +171,30 @@ def pecommandknow():
 
     os.system('cls')
     print(logo)
-    print ("[+] PeCMD | All Prefetch Listout Here : \n")
+    print ("[+] PeCMD | Find Commands : \n")
 
-    os.system('PECMD.exe')
+    os.system('PECMD.exe -h')
     pecmd()
+
 
 
 def allprefetch():
 
     os.system('cls')
     print(logo)
-    print ("[+] PeCMD | Find Mimikatz Here : \n")
+    print ("[+] PeCMD | Find All Prefetch Here : \n")
 
     os.system('PECmd.exe -d "C:\Windows\Prefetch')
     pecmd()
 
+def findmimi():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] PeCMD | Find Mimikatz Here : \n")
+
+    os.system('PECMD.exe C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf')
+    pecmd()
 
 # Run Loki Here
 
@@ -338,6 +356,42 @@ def logonpass():
     os.system('mimikatz.exe sekurlsa::logonpasswords')
     
     mimikatz()
+
+
+
+
+#Run All analysis
+
+def allanalysis():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] SmokeRaid | Run All Analysis : \n")
+
+    
+    os.system('autorunsc.exe -h -ct')
+    os.system('PECMD.exe C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf')
+    os.system('loki.exe')
+    
+    
+    mainmenu()
+
+
+
+
+# Run WMI Script
+def wmiscript():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] SmokeRaid | Run WMI Script : \n")
+    os.system('wmi.ps1')
+
+    mainmenu()
+
+
+
+
 
 # Call main menu to run program
 mainmenu()
