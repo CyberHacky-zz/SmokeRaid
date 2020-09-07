@@ -180,6 +180,67 @@ def allprefetch():
 
 # Run Loki Here
 
+def loki():
+
+    print ("""
+   {1}--Help - Know all Commands
+   {2}--Scan Machine
+   {3}--Read Logs 
+   {0}--Back to Main Menu
+   {99}--Exit
+ """)
+    choice = input("SmokeRaid~# ")
+    if choice == "1":
+        lokicommandknow()
+    elif choice == "2":
+        scanmachine()
+    elif choice == "3":
+        readlog()
+    elif choice == "0":
+        os.system('cls')
+        print(logo)
+        mainmenu()
+    elif choice == "99":
+        print("Thanks for Using SmokeRaid")
+        os.system('cls'), sys.exit()
+    elif choice == "":
+        print("\033[1m [+] Kindly Choose One Option \033[0m")
+        pecmd()
+    else:
+        print(logo)
+        mainmenu()
+
+
+## Run Loki commmand here
+
+def lokicommandknow():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] LoKI | Find Commands Here : \n")
+
+    os.system('loki.exe -h')
+    loki()
+
+
+def scanmachine():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] LoKI | Scan Machine : \n")
+
+    os.system('loki.exe')
+    loki()
+
+
+def  readlog():
+
+    os.system('cls')
+    print(logo)
+    print ("[+] LoKI | Read Logs : \n")
+
+    os.system('loki.exe -l ')
+    loki()
 
 
 
