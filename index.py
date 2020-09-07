@@ -375,11 +375,10 @@ def allanalysis():
 
     pecmdcsv = os.system('PECMD.exe -f C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf > pecmd_file.csv')
 
+    lokicsv =  os.system('loki.exe > lokioutput.csv')
 
-    
-    #os.system('autorunsc.exe -h -ct')
-    #os.system('PECMD.exe -f C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf')
-    #os.system('loki.exe')
+    print(' [!] Bingo -  Analysis Saved in CSV File [!] ')
+
     
     mainmenu()
 
