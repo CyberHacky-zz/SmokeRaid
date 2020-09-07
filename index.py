@@ -2,8 +2,8 @@
 
 import os
 import sys
-import os
 import csv
+import pandas as pd 
 
 #Title print
 
@@ -34,6 +34,7 @@ def mainmenu():
    {5}--Run All Analysis
    {6}--VirusTotal Analysis
    {7}--Run WMI Script
+   {8}--Remove WMI Script
    {0}--Exit
  """)
     choice = input("SmokeRaid~# ")
@@ -51,6 +52,8 @@ def mainmenu():
         virustotal()
     elif choice == "7":
         wmiscript() 
+    elif choice == "8":
+        wmiremovescript() 
     elif choice == "0":
         print("Thanks for Using Smokeraid")
         os.system('cls'), sys.exit()
@@ -368,16 +371,20 @@ def allanalysis():
     print(logo)
     print ("[+] SmokeRaid | Run All Analysis : \n")
 
+    autocsv = os.system('autorunsc.exe -ct > autorun_output.csv') 
+
+    pecmdcsv = os.system('PECMD.exe -f C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf > pecmd_file.csv')
+
+
     
-    os.system('autorunsc.exe -h -ct')
-    os.system('PECMD.exe C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf')
-    os.system('loki.exe')
-    
+    #os.system('autorunsc.exe -h -ct')
+    #os.system('PECMD.exe -f C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf')
+    #os.system('loki.exe')
     
     mainmenu()
 
 
-
+    print("Hello stackoverflow!", file=open("output.txt", "a"))
 
 # Run WMI Script
 def wmiscript():
@@ -390,7 +397,23 @@ def wmiscript():
     mainmenu()
 
 
+# Remove WMI Script
+def wmiremovescript():
 
+    os.system('cls')
+    print(logo)
+    print ("[+] SmokeRaid | Remove WMI Script : \n")
+    os.system('wmiremove.ps1')
+
+    mainmenu()
+
+
+
+# Run VirusTotal Analysis
+
+def virustotal():
+
+    mainmenu()
 
 
 # Call main menu to run program
