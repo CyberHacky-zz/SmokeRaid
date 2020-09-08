@@ -14,3 +14,9 @@ Note : Run Index.py for Home module, This is unstable version, need a lot of wor
 2. Command : python virustotal.py --hash <hash> --key <key> -o filename.txt
 3. Bingo!
 
+# Hash Generator
+
+1. Go into Analysis Folder
+2. Put all tools logs in to analysis folder : ex. autorunsc.log, pecmd.log, lokioutput.log
+3. Run Index.py
+4. Bingo!
