@@ -4,6 +4,28 @@ import argparse
 import os
 import time
 
+
+
+
+#Title print
+
+logo = ('''
+     
+   _____                 _        _____       _     _ 
+  / ____|               | |      |  __ \     (_)   | |
+ | (___  _ __ ___   ___ | | _____| |__) |__ _ _  __| |
+  \___ \| '_ ` _ \ / _ \| |/ / _ \  _  // _` | |/ _` |
+  ____) | | | | | | (_) |   <  __/ | \ \ (_| | | (_| |
+ |_____/|_| |_| |_|\___/|_|\_\___|_|  \_\__,_|_|\__,_|
+                                                      
+                                                                   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[!] This Tool Must Run As ROOT [!]            Created By : CyberHacky\n\n''')
+
+
+# Print Logo on startup
+print(logo)
+
 def checkkey(kee):
 	try:
 		if len(kee) == 64:
@@ -43,7 +65,7 @@ def main():
 	parser.add_argument('-i', '--input', type=fileexists, required=False, help='Input File Location EX: /Desktop/Somewhere/input.txt')
 	parser.add_argument('-o', '--output', required=True, help='Output File Location EX: /Desktop/Somewhere/output.txt ')
 	parser.add_argument('-H', '--hash', type=checkhash, required=False, help='Single Hash EX: d41d8cd98f00b204e9800998ecf8427e')
-	parser.add_argument('-k', '--key', type=checkkey, required=True, help='VT API Key EX: ASDFADSFDSFASDFADSFDSFADSF')
+	parser.add_argument('-k', '--key', type=checkkey, required=True, help=' API Key EX: ASDFADSFDSFASDFADSFDSFADSF')
 	parser.add_argument('-u', '--unlimited', action='store_const', const=1, required=False, help='Changes the 26 second sleep timer to 1.')
 	args = parser.parse_args()
 
