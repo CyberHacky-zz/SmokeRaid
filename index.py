@@ -4,6 +4,7 @@ import os
 import sys
 import csv
 import pandas as pd 
+import hashlib
 
 #Title print
 
@@ -371,19 +372,21 @@ def allanalysis():
     print(logo)
     print ("[+] SmokeRaid | Run All Analysis : \n")
 
-    autocsv = os.system('autorunsc.exe -ct > autorun_output.csv') 
+    autocsv = os.system('autorunsc.exe -ct > autorun_output.txt') 
 
-    pecmdcsv = os.system('PECMD.exe -f C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf > pecmd_file.csv')
+    pecmdcsv = os.system('PECMD.exe -f C:\Windows\Prefetch\MIMIKATZ.EXE-BE95302C.pf > pecmd_file.txt')
 
-    lokicsv =  os.system('loki.exe > lokioutput.csv')
+    lokicsv =  os.system('loki.exe > lokioutput.txt')
 
     print(' [!] Bingo -  Analysis Saved in CSV File [!] ')
+
+
 
     
     mainmenu()
 
 
-    print("Hello stackoverflow!", file=open("output.txt", "a"))
+   
 
 # Run WMI Script
 def wmiscript():
